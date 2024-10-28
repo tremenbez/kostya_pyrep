@@ -5,16 +5,11 @@ increase = 1.05  # Ежемесячный рост цен
 count_ = 1
 AllMoney = money_capital
 
-while True:
-    if count_ != 1:
-        spend *= increase
-
+while AllMoney > spend:
     AllMoney += salary
     AllMoney -= spend
+    spend *= increase
     count_ += 1
-
-    if AllMoney < spend:
-        break
 
 print("Количество месяцев, которое можно протянуть без долгов:", count_)
 
